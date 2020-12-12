@@ -7,14 +7,13 @@ import (
 	"crypto/rand"
 	"crypto/sha1"
 	"crypto/subtle"
-	"strconv"
-	"strings"
-
 	"encoding/base64"
 	"encoding/hex"
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strconv"
+	"strings"
 
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/crypto/scrypt"

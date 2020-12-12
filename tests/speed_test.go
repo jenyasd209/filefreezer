@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tbogdala/filefreezer"
+	"github.com/jenyasd209/filefreezer"
 )
 
 func setupBenchmarkStorage(dbPath string, b *testing.B) (*filefreezer.Storage, *filefreezer.User) {

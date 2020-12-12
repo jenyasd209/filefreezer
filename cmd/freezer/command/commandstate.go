@@ -6,7 +6,7 @@ package command
 import (
 	"fmt"
 
-	"github.com/tbogdala/filefreezer/cmd/freezer/models"
+	"github.com/jenyasd209/filefreezer/cmd/freezer/models"
 )
 
 // State tracks the state of the freezer commands during execution.

@@ -11,14 +11,13 @@ import (
 	"os"
 	"runtime/pprof"
 	"strconv"
+	"strings"
 	"time"
 
-	"github.com/tbogdala/filefreezer"
-	"github.com/tbogdala/filefreezer/cmd/freezer/command"
+	"github.com/jenyasd209/filefreezer"
+	"github.com/jenyasd209/filefreezer/cmd/freezer/command"
 
-	"strings"
-
-	kingpin "gopkg.in/alecthomas/kingpin.v2"
+	kingpin "github.com/alecthomas/kingpin"
 )
 
 // User kingpin to define a set of commands and flags for the application.

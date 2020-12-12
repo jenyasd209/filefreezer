@@ -9,8 +9,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/tbogdala/filefreezer"
-	"github.com/tbogdala/filefreezer/cmd/freezer/command"
+	"github.com/jenyasd209/filefreezer"
+	"github.com/jenyasd209/filefreezer/cmd/freezer/command"
 )
 
 func setupBenchmarkState(b *testing.B) *command.State {

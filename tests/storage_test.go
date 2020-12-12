@@ -7,6 +7,7 @@ import (
 	"bytes"
 	"crypto/sha1"
 	"encoding/base64"
+	"fmt"
 	"io"
 	"io/ioutil"
 	"math/rand"
@@ -15,9 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"fmt"
-
-	"github.com/tbogdala/filefreezer"
+	"github.com/jenyasd209/filefreezer"
 )
 
 func TestMain(m *testing.M) {

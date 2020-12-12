@@ -7,16 +7,15 @@ import (
 	"bytes"
 	"crypto/tls"
 	"crypto/x509"
+	"encoding/json"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
 
-	"github.com/tbogdala/filefreezer/cmd/freezer/models"
-
-	"encoding/json"
-	"io/ioutil"
+	"github.com/jenyasd209/filefreezer/cmd/freezer/models"
 )
 
 // Authenticate will use a HTTP call to authenticate the user

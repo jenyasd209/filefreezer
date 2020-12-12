@@ -3,14 +3,14 @@ Filefreezer (Alpha 1)
 
 A simple to deploy cloud file storage multi-user system; Licensed under the GPL v3.
 
-Have you ever wanted an easy to deploy server for backing up files and
+Have you ever wanted an easy to deploy a server for backing up files and
 storing them encrypted on a remote machine? Filefreezer does that! It 
 also keeps versions of the files that have been added to the server so that
 you can go back in the file history and pull up old versions of the files.
 
-Alpha 1 is the first public release of the project. It's passing all of the projects
+Alpha 1 is the first public release of the project. It's passing all the projects
 unit tests. Please try it out and report any bugs or any instabilities you find. 
-A GUI front end is under development and a web front end will follow shortly after.
+A GUI front end is under development, and a web front end will follow shortly after.
 
 **Because it is an alpha release, please don't trust it for reliability yet!**
 
@@ -27,7 +27,7 @@ Features
 
 * Simple data storage backend using Sqlite3
 
-* Public RESTful API that can be used by other clients
+* Public RESTfull API that can be used by other clients
 
 **ALPHA RELEASE: API AND DATABASE STABILITY NOT GUARANTEED!**
 
@@ -36,36 +36,41 @@ Installation
 ------------
 
 The quick way to install Filefreezer is to use `go get` to download
-the repository and its dependences and then `go install` to install
+the repository and its dependencies and then `go install` to install
 the `freezer` CLI executable to $GOROOT/bin.
 
 ```bash
-go get github.com/tbogdala/filefreezer/...
-go install github.com/tbogdala/filefreezer/cmd/freezer
+go get github.com/jenyasd209/filefreezer/...
+go install github.com/jenyasd209/filefreezer/cmd/freezer
 ```
 ---
 
-Another way to quickly deploy Filefreezer is to use [Docker](https://www.docker.com) and pull
-the current image from [Docker Hub](https://hub.docker.com/r/tbogdala/filefreezer/)
+[comment]: <> (Another way to quickly deploy Filefreezer is to use [Docker]&#40;https://www.docker.com&#41; and pull)
 
-```bash
-sudo docker pull tbogdala/filefreezer:0.9.0
-sudo docker run --rm -v $HOME/freezer:/data tbogdala/filefreezer:0.9.0 user add -u admin -p 1234
-sudo docker run --read-only --rm -v $HOME/freezer:/data -p 8040:8080 tbogdala/filefreezer:0.9.0
-```
+[comment]: <> (the current image from [Docker Hub]&#40;https://hub.docker.com/r/tbogdala/filefreezer/&#41;)
 
-For more information, see the page on [Docker Hub](https://hub.docker.com/r/tbogdala/filefreezer/).
+[comment]: <> (```bash)
 
----
+[comment]: <> (sudo docker pull tbogdala/filefreezer:0.9.0)
+
+[comment]: <> (sudo docker run --rm -v $HOME/freezer:/data tbogdala/filefreezer:0.9.0 user add -u admin -p 1234)
+
+[comment]: <> (sudo docker run --read-only --rm -v $HOME/freezer:/data -p 8040:8080 tbogdala/filefreezer:0.9.0)
+
+[comment]: <> (```)
+
+[comment]: <> (For more information, see the page on [Docker Hub]&#40;https://hub.docker.com/r/tbogdala/filefreezer/&#41;.)
+
+[comment]: <> (---)
 
 To build the project manually from source code, you will want to vendor the
-depenencies used by the project. This process is now managed by Go's 
+dependencies used by the project. This process is now managed by Go's 
 [dep](https://github.com/golang/dep) tool. Simply run the following 
 commands to build the vendor directory for dependencies and then build
 the `freezer` CLI executable.
 
 ```
-cd $GOPATH/src/github.com/tbogdala/filefreezer
+cd $GOPATH/src/github.com/jenyasd209/filefreezer
 dep ensure
 cd cmd/freezer
 go build
@@ -82,7 +87,7 @@ mv cert.pem ../freezer.crt
 mv key.pem ../freezer.key
 ```
 
-In production you will want to use your own valid certificate public and private keys
+In production, you will want to use your own valid certificate public and private keys
 for serving HTTPS.
 
 
@@ -94,7 +99,7 @@ no one will be able to authenticate and sync files. The act of adding
 a user will also create the database file that will be used later
 when running the server.
 
-To setup a user named `admin` with a password of `1234` run the following command:
+To set up a user named `admin` with a password of `1234` run the following command:
 
 ```bash
 freezer user add -u admin -p 1234
@@ -107,7 +112,7 @@ freezer user rm -u admin
 ```
 
 At any point you can modify the user information like name, password 
-and quota using the `freezer user mod` command. For example you 
+and quota using the `freezer user mod` command. For example, you 
 can change the quota of the admin user to 1 KB by running the
 following command:
 
@@ -151,7 +156,7 @@ To get the list of files stored by the user, run the following:
 freezer -u admin -p 1234 -h localhost:8080 file ls
 ```
 
-A file can be syncrhonized with the server by running the following command,
+A file can be synchronized with the server by running the following command,
 which for test purposes will upload a file called `hello.txt` from the user's
 home directory:
 
@@ -159,7 +164,7 @@ home directory:
 freezer -u admin -p 1234 -s secret -h localhost:8080 sync ~/hello.txt hello.txt
 ```
 
-The first parameter to the `sync` command is the local filepath to syncrhonize.
+The first parameter to the `sync` command is the local filepath to synchronize.
 A second parameter can be specified to override what the file would be called
 on the server. If only `~/hello.txt` was specified, it will get expanded and 
 named on the server as `/home/timothy/hello.txt` (depending on the user's home
@@ -203,15 +208,15 @@ running the following command:
 freezer -u admin -p 1234 -s secret -h localhost:8080 versions ls hello.txt
 ```
 
-If you wanted to syncronize the local file back to the first version of the
-file, you can do so with the following command which will overrite the local
+If you wanted to synchronize the local file back to the first version of the
+file, you can do so with the following command which will overwrite the local
 file with the original version of the file still stored on the server:
 
 ```bash
 freezer -u admin -p 1234 -s secret -h localhost:8080 sync --version=1 ~/hello.txt hello.txt
 ```
 
-The local file should now be set back to what it was when it was originally synchronzied.
+The local file should now be set back to what it was when it was originally synchronized.
 
 A shortcut to synchronize an entire directory is this command:
 
@@ -219,7 +224,7 @@ A shortcut to synchronize an entire directory is this command:
 freezer -u admin -p 1234 -s secret -h localhost:8080 syncdir /etc serverbackup/etc
 ```
 
-This will upload the entire `/etc` folder and all of its subfolders to the server
+This will upload the entire `/etc` folder and all of its sub-folders to the server
 under a prefix of `serverbackup`. By using a prefix like this in the target of
 a `sync` or `syncdir` operation, you can logically organize different groups of files.
 
@@ -233,14 +238,14 @@ freezer -u admin -p 1234 -s secret -h localhost:8080 versions rm 1 2 hello.txt
 This deletes the first and second version of the synced `hello.txt` file but leaves
 other versions on the server.
 
-If you wished to remove all of the file versions except the current one, you can
+If you wished to remove all the file versions except the current one, you can
 use this syntax where `H~` gets interpreted as (Current Version - 1):
 
 ```bash
 freezer -u admin -p 1234 -s secret -h localhost:8080 versions rm 1 H~ hello.txt
 ```
 
-You can also use the regular expression matching to remove all but the current
+You can also use the regular expression matching to remove all, but the current
 version of all files in storage by running the following command (thereby
 saving some space):
 
@@ -256,10 +261,10 @@ This package ships with unit tests and benchmarks included. These are in separat
 locations to have the tests isolated to the main `filefreezer` package and then
 tests specific to the projects located in the `cmd` directory.
 
-Currently to run all of the tests you would execute the following in a shell:
+Currently, to run all the tests you would execute the following in a shell:
 
 ```bash
-cd $GOPATH/src/github.com/tbogdala/filefreezer/tests
+cd $GOPATH/src/github.com/jenyasd209/filefreezer/tests
 go test
 cd ../cmd/freezer
 go test
@@ -269,7 +274,7 @@ To run the benchmarks you can execute a similar set of commands which will
 only run the benchmarks and not the unit tests:
 
 ```bash
-cd $GOPATH/src/github.com/tbogdala/filefreezer/tests
+cd $GOPATH/src/github.com/jenyasd209/filefreezer/tests
 go test -run=xxx -bench=.
 cd ../cmd/freezer
 go test -run=xxx -bench=.
@@ -279,7 +284,7 @@ go test -run=xxx -bench=.
 Known Bugs and Limitations
 --------------------------
 
-* Consider a quota for max fileinfo registered so service cannot be DDOS'd 
+* Consider a quota for a max fileinfo registered so service cannot be DDOS'd 
   by registering infinite files.
 
 * Incrementing a user's revision number only happens in some areas like chunk modification.
@@ -302,10 +307,9 @@ TODO / Notes
 
 * flag: hash on start instead of just checking mod time
 
-* flag: safetey level for database -- currently it is tuned to be very safe,
+* flag: safety level for a database -- currently it is tuned to be very safe,
   but a non-zero chance of db corruption on power loss or crash. docs for
-  sqlite say "in practice, you are more likely to suffer a catastrophic disk failure 
-  or some other unrecoverable hardware fault" but this should be tunable
+  sqlite say "in practice, you are more likely to suffer a catastrophic disk failure, or some other unrecoverable hardware fault" but this should be tunable
   via command line.
 
 * work on readability of error messages wrt bubbling up error objects

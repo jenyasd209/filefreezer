@@ -7,8 +7,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/tbogdala/filefreezer"
-	"github.com/tbogdala/filefreezer/cmd/freezer/models"
+	"github.com/jenyasd209/filefreezer"
+	"github.com/jenyasd209/filefreezer/cmd/freezer/models"
 )
 
 // AddUser adds a user to the database using the username, password and quota provided.
