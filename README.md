@@ -45,18 +45,23 @@ go install github.com/jenyasd209/filefreezer/cmd/freezer
 ```
 ---
 
-Another way to quickly deploy Filefreezer is to use [Docker](https://www.docker.com) and pull
-the current image from [Docker Hub](https://hub.docker.com/r/tbogdala/filefreezer/)
+[comment]: <> (Another way to quickly deploy Filefreezer is to use [Docker]&#40;https://www.docker.com&#41; and pull)
 
-```bash
-sudo docker pull tbogdala/filefreezer:0.9.0
-sudo docker run --rm -v $HOME/freezer:/data tbogdala/filefreezer:0.9.0 user add -u admin -p 1234
-sudo docker run --read-only --rm -v $HOME/freezer:/data -p 8040:8080 tbogdala/filefreezer:0.9.0
-```
+[comment]: <> (the current image from [Docker Hub]&#40;https://hub.docker.com/r/tbogdala/filefreezer/&#41;)
 
-For more information, see the page on [Docker Hub](https://hub.docker.com/r/tbogdala/filefreezer/).
+[comment]: <> (```bash)
 
----
+[comment]: <> (sudo docker pull tbogdala/filefreezer:0.9.0)
+
+[comment]: <> (sudo docker run --rm -v $HOME/freezer:/data tbogdala/filefreezer:0.9.0 user add -u admin -p 1234)
+
+[comment]: <> (sudo docker run --read-only --rm -v $HOME/freezer:/data -p 8040:8080 tbogdala/filefreezer:0.9.0)
+
+[comment]: <> (```)
+
+[comment]: <> (For more information, see the page on [Docker Hub]&#40;https://hub.docker.com/r/tbogdala/filefreezer/&#41;.)
+
+[comment]: <> (---)
 
 To build the project manually from source code, you will want to vendor the
 dependencies used by the project. This process is now managed by Go's 
