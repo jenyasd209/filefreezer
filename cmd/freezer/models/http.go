@@ -3,7 +3,7 @@
 
 package models
 
-import "github.com/tbogdala/filefreezer"
+import "github.com/jenyasd209/filefreezer"
 
 // ServerCapabilities gets returned to the user to describe the features
 // that the server has to the client.

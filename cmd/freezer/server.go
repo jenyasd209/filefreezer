@@ -13,8 +13,9 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/jenyasd209/filefreezer"
+
 	"github.com/labstack/echo"
-	"github.com/tbogdala/filefreezer"
 )
 
 // serverState represents the server state and includes configuration flags.

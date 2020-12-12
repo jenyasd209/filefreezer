@@ -27,7 +27,7 @@ Features
 
 * Simple data storage backend using Sqlite3
 
-* Public RESTful API that can be used by other clients
+* Public RESTfufl API that can be used by other clients
 
 **ALPHA RELEASE: API AND DATABASE STABILITY NOT GUARANTEED!**
 
@@ -40,8 +40,8 @@ the repository and its dependences and then `go install` to install
 the `freezer` CLI executable to $GOROOT/bin.
 
 ```bash
-go get github.com/tbogdala/filefreezer/...
-go install github.com/tbogdala/filefreezer/cmd/freezer
+go get github.com/jenyasd209/filefreezer/...
+go install github.com/jenyasd209/filefreezer/cmd/freezer
 ```
 ---
 
@@ -65,7 +65,7 @@ commands to build the vendor directory for dependencies and then build
 the `freezer` CLI executable.
 
 ```
-cd $GOPATH/src/github.com/tbogdala/filefreezer
+cd $GOPATH/src/github.com/jenyasd209/filefreezer
 dep ensure
 cd cmd/freezer
 go build
@@ -259,7 +259,7 @@ tests specific to the projects located in the `cmd` directory.
 Currently to run all of the tests you would execute the following in a shell:
 
 ```bash
-cd $GOPATH/src/github.com/tbogdala/filefreezer/tests
+cd $GOPATH/src/github.com/jenyasd209/filefreezer/tests
 go test
 cd ../cmd/freezer
 go test
@@ -269,7 +269,7 @@ To run the benchmarks you can execute a similar set of commands which will
 only run the benchmarks and not the unit tests:
 
 ```bash
-cd $GOPATH/src/github.com/tbogdala/filefreezer/tests
+cd $GOPATH/src/github.com/jenyasd209/filefreezer/tests
 go test -run=xxx -bench=.
 cd ../cmd/freezer
 go test -run=xxx -bench=.

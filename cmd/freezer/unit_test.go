@@ -4,24 +4,21 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"math/rand"
 	"os"
+	"strings"
 	"testing"
 	"time"
 
-	"io/ioutil"
-
-	"bytes"
-
-	"strings"
-
+	"github.com/jenyasd209/filefreezer"
+	"github.com/jenyasd209/filefreezer/cmd/freezer/command"
+	"github.com/jenyasd209/filefreezer/cmd/freezer/models"
 	"github.com/spf13/afero"
-	"github.com/tbogdala/filefreezer"
-	"github.com/tbogdala/filefreezer/cmd/freezer/command"
-	"github.com/tbogdala/filefreezer/cmd/freezer/models"
 )
 
 const (

@@ -6,16 +6,16 @@ package main
 import (
 	"io/ioutil"
 	"net/http"
+	"strconv"
 	"time"
 
-	"strconv"
+	"github.com/dgrijalva/jwt-go"
 
-	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 
-	"github.com/tbogdala/filefreezer"
-	"github.com/tbogdala/filefreezer/cmd/freezer/models"
+	"github.com/jenyasd209/filefreezer"
+	"github.com/jenyasd209/filefreezer/cmd/freezer/models"
 )
 
 const (

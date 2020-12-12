@@ -12,8 +12,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/tbogdala/filefreezer"
-	"github.com/tbogdala/filefreezer/cmd/freezer/models"
+	"github.com/jenyasd209/filefreezer"
+	"github.com/jenyasd209/filefreezer/cmd/freezer/models"
 )
 
 // SyncStatus enumeration used to indicate the findings of the SyncFile and

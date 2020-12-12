@@ -7,8 +7,8 @@ RUN apk add --no-cache ca-certificates
 
 RUN apk add --no-cache --virtual .build-deps go git g++ \
     && go get -u github.com/golang/dep/cmd/dep \
-    && go get github.com/tbogdala/filefreezer \
-    && cd /root/go/src/github.com/tbogdala/filefreezer \
+    && go get github.com/jenyasd209/filefreezer \
+    && cd /root/go/src/github.com/jenyasd209/filefreezer \
     && /root/go/bin/dep ensure \
     && cd cmd/freezer \
     && go install \
